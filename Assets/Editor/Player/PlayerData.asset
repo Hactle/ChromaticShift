@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b0ee7c34cfd7e4a8a9f74e576595f5, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  DefaultData: {fileID: 11400000, guid: 8c82985b0d8c1814caa64c372d8993f8, type: 2}
+  IceAccelerationMultiplier: 0.3
+  IceDecelerationMultiplier: 0.02
+  MoveSpeed: 7
+  Acceleration: 10
+  Deceleration: 15
+  ClimbSpeed: 8
+  DashForce: 20
+  DashCooldown: 1
+  CanClimb: 0
+  CanDash: 1
+  AirControlMultiplier: 0.35
+  JumpForce: 9
+  HoldMultiplier: 2
+  FallMultiplier: 3.5
+  LowMultiplier: 2.5
+  MaxHoldTime: 0.3
