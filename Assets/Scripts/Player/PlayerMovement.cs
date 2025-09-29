@@ -63,9 +63,6 @@ public class PlayerMovement : MonoBehaviour
                 _faceDirection = newDirection;
             }
         }
-
-
-        Debug.Log($"Interact: {_playerInput.IsInteract}, OnLianas: {IsOnLianas()}, FaceDirection: {_faceDirection}");
     }
 
     private void FixedUpdate()

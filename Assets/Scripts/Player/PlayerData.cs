@@ -37,6 +37,7 @@ public class PlayerData : ScriptableObject
             case StateColor.red:
                 ResetFields();
                 CanDash = true;
+                MoveSpeed += 2;
                 break;
             case StateColor.green:
                 ResetFields();
@@ -48,6 +49,8 @@ public class PlayerData : ScriptableObject
                 IceDecelerationMultiplier = 1f;
                 JumpForce = 11f;
                 break;
+            case StateColor.grey:
+                ResetFields(); break;               
         }
     }
 

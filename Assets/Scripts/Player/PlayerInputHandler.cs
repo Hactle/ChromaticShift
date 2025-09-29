@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 namespace Input
 {
     public class PlayerInputHandler : MonoBehaviour
-    {   
+    {
+        #region Actions
         public event Action OnJumped;
         public event Action OnJumpHolded;
         public event Action OnJumpReleased; 
         public event Action OnDashPressed;     
-        public event Action<StateColor> OnColorChange;  
-       
+        public event Action<StateColor> OnColorChange;
+        public event Action OnPausePress;
+        #endregion
         public float MoveAxis { get; private set; }
         public float VerticalAxis { get; private set; } 
 
@@ -42,7 +44,7 @@ namespace Input
             }
         }
 
-        public void HandleColorInput(InputAction.CallbackContext context)
+        public void OnHandleColorInput(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
 
@@ -56,7 +58,7 @@ namespace Input
             }
         }
 
-        public void Interact(InputAction.CallbackContext context)
+        public void OnInteract(InputAction.CallbackContext context)
         {
             if (context.started)
             {
@@ -74,10 +76,16 @@ namespace Input
             }
         }
 
-        public void Dash(InputAction.CallbackContext context)
+        public void OnDash(InputAction.CallbackContext context)
         {
             if (context.started)
                 OnDashPressed?.Invoke();
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                OnPausePress?.Invoke();
         }
     }
 }

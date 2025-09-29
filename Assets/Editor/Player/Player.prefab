@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5984894520228753795}
   - component: {fileID: 5367774377431435218}
   - component: {fileID: 7996470353596672414}
+  - component: {fileID: 2346928506033726191}
   - component: {fileID: 6342681627821909904}
   - component: {fileID: 4809116798904673647}
   - component: {fileID: 5168302148800070699}
@@ -18,7 +19,7 @@ GameObject:
   - component: {fileID: 6450227660815373252}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +123,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &2346928506033726191
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364606919724957617}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!61 &6342681627821909904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,7 +288,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4809116798904673647}
         m_TargetAssemblyTypeName: Input.PlayerInputHandler, Assembly-CSharp
-        m_MethodName: HandleColorInput
+        m_MethodName: OnHandleColorInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -273,7 +320,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4809116798904673647}
         m_TargetAssemblyTypeName: Input.PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Interact
+        m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -289,7 +336,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4809116798904673647}
         m_TargetAssemblyTypeName: Input.PlayerInputHandler, Assembly-CSharp
-        m_MethodName: Dash
+        m_MethodName: OnDash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -301,6 +348,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dab36d27-6fc5-49e5-807a-794d5dfc813c
     m_ActionName: 'Main/Dash[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4809116798904673647}
+        m_TargetAssemblyTypeName: Input.PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 150fdc33-3f87-4b6b-ae2e-fdb9a8493e90
+    m_ActionName: 'Main/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main

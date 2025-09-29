@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ice
   - Lianas
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

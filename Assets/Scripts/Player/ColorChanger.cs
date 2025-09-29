@@ -12,9 +12,10 @@ public enum StateColor
 
 public class ColorChanger : MonoBehaviour
 {
-    public static event Action<StateColor> OnColorChanged;
-
+    private SpriteRenderer _spriteRenderer;
     private PlayerInputHandler _playerInput;
+
+    public static event Action<StateColor> OnColorChanged;
 
     private StateColor _currentColor;
     public StateColor CurrentColor
@@ -29,12 +30,31 @@ public class ColorChanger : MonoBehaviour
 
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerInput = GetComponent<PlayerInputHandler>();
+        CurrentColor = StateColor.grey;
+    }
+
+    private void SetPlayerColor(StateColor color)
+    {
+        switch (color)
+        {
+            case StateColor.red:
+                _spriteRenderer.color = Color.red; break;
+            case StateColor.green:
+                _spriteRenderer.color = Color.green; break;
+            case StateColor.blue:
+                _spriteRenderer.color = Color.blue; break;
+            case StateColor.grey:
+                _spriteRenderer.color = Color.grey; break;
+        }
     }
 
     private void ChangeStateColor(StateColor newColor)
     {
-        CurrentColor = newColor;
+        CurrentColor = newColor;     
+        SetPlayerColor(newColor);
+
         Debug.Log("Current color =" + CurrentColor);
     }
 
