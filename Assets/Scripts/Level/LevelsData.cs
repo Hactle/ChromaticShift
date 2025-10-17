@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -43,8 +44,40 @@ public class LevelsData : ScriptableObject
         }
     }
 
+    #region Save/Load
+    private void OnApplicationQuit()
+    {
+        SaveData(levels);
+    }
+
+    public void SaveData(List<LevelScene> levels)
+    {
+        for (int i = 0; i < levels.Count; i++)
+        {
+            int result = levels[i].IsUnlocked ? 1 : 0;
+
+            PlayerPrefs.SetInt($"Level_{i}", result);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    public void LoadData(List<LevelScene> levels)
+    {
+        for (int i = 0; i < levels.Count; i++)
+        {
+            int unlocked = PlayerPrefs.GetInt($"Level_{i}", 0);
+            levels[i].IsUnlocked = (unlocked == 1);
+        }
+    }
+    #endregion
+
     private void OnEnable()
     {
+        LoadData(levels);
+
+        Application.quitting += OnApplicationQuit;
+
         LevelCompletePoint.OnLevelComplete += UnlockNextLevel;
     }
 

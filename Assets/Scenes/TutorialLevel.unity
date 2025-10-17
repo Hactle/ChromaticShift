@@ -578086,7 +578086,15 @@ PrefabInstance:
     - target: {fileID: 1716266028767822383, guid: ff0ba878234254f4a9dacda9c52717e7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1333694796}
+      objectReference: {fileID: 11500000, guid: 2cbb353450ede634d84be2d773a0d8f4, type: 3}
+    - target: {fileID: 1716266028767822383, guid: ff0ba878234254f4a9dacda9c52717e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716266028767822383, guid: ff0ba878234254f4a9dacda9c52717e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6288190221040714652, guid: ff0ba878234254f4a9dacda9c52717e7, type: 3}
       propertyPath: m_Name
       value: Level Complete Panel
