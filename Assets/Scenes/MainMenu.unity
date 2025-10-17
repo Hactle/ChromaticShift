@@ -836,6 +836,7 @@ GameObject:
   - component: {fileID: 730651992}
   - component: {fileID: 730651994}
   - component: {fileID: 730651993}
+  - component: {fileID: 730651995}
   m_Layer: 5
   m_Name: LevelSelect
   m_TagString: Untagged
@@ -902,6 +903,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730651991}
   m_CullTransparentMesh: 1
+--- !u!114 &730651995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730651991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67264d032d01694fa1154b71ff7c660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: f78471a686da3564daca8e4453be6d61, type: 2}
+  _buttons:
+  - {fileID: 333364890}
 --- !u!1 &926941415
 GameObject:
   m_ObjectHideFlags: 0

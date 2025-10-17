@@ -1,6 +1,6 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class LevelScene
