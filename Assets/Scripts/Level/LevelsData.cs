@@ -18,6 +18,7 @@ public class LevelsData : ScriptableObject
     public int CurrentLevelID;
 
     public List<LevelScene> levels = new();
+    public event Action OnLevelUnlock;
 
     public void SetCurrentLevelID(int levelID)
     {
@@ -41,6 +42,7 @@ public class LevelsData : ScriptableObject
         if (level != null)
         {
             level.IsUnlocked = true;
+            OnLevelUnlock?.Invoke();
         }
     }
 

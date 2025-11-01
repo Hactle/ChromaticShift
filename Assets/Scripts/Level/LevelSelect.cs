@@ -17,8 +17,17 @@ public class LevelSelect : MonoBehaviour
     {
         for (int i = 0; i < _buttons.Count; i++)
         {
-            _buttons[i].interactable = _data.levels[i + 1].IsUnlocked; //tutorial level in data.levels - 1,
-                                                                       //but in List buttons on 1 id - first level
+            _buttons[i].interactable = _data.levels[i + 1].IsUnlocked;
         }
+    }
+
+    private void OnEnable()
+    {
+        _data.OnLevelUnlock += UpdateButtonsInteractable;
+    }
+
+    private void OnDisable()
+    {
+        _data.OnLevelUnlock -= UpdateButtonsInteractable;
     }
 }

@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13038a5f61427d94d9cbafbf633beb48, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  CurrentLevelID: 0
+  CurrentLevelID: 3
   levels:
   - SceneName: TutorialLevel
     LevelID: 1
     IsUnlocked: 1
   - SceneName: Level_1
     LevelID: 2
+    IsUnlocked: 1
+  - SceneName: Level_2
+    LevelID: 3
     IsUnlocked: 1
